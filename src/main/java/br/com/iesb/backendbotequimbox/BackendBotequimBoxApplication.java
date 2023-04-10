@@ -1,4 +1,4 @@
-package com.example.backendbotequimbox;
+package br.com.iesb.backendbotequimbox;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
