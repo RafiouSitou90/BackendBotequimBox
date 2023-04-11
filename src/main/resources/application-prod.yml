@@ -1,0 +1,26 @@
+spring:
+    application:
+        name: "Backend Botequim Box"
+    datasource:
+        driver-class-name: org.postgresql.Driver
+        url: jdbc:postgresql://${APP_DATABASE_HOST:localhost}:${APP_DATABASE_PORT:5432}/${APP_DATABASE_NAME:db_botequimbox_dev}
+        username: ${APP_DATABASE_USERNAME:postgres}
+        password: ${APP_DATABASE_PASSWORD:secret}
+
+    jpa:
+        hibernate:
+            ddl-auto: update
+        show-sql: false
+        properties:
+            hibernate:
+                format_sql: false
+        database: postgresql
+        database-platform: org.hibernate.dialect.PostgreSQLDialect
+        open-in-view: false
+
+app:
+    security:
+        jwt:
+            secret-key: ${APP_SECURITY_JWT_SECRET_KEY:5368566D5971337436773979244226452948404D635166546A576E5A72347537}
+            access-expiration: ${APP_SECURITY_JWT_ACCESS_EXPIRATION:86400000}
+            refresh-expiration: ${APP_SECURITY_JWT_REFRESH_EXPIRATION:604800000}

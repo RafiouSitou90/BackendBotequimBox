@@ -1,32 +1,3 @@
-server:
-    port: 8080
-
 spring:
-    application:
-        name: "Backend Botequim Box"
-    datasource:
-        driver-class-name: org.h2.Driver
-        url: jdbc:h2:file:./data/db_botequimbox
-        username: username
-        password: password
-
-    jpa:
-        hibernate:
-            ddl-auto: update
-        show-sql: true
-        properties:
-            hibernate:
-                format_sql: true
-        database: h2
-        database-platform: org.hibernate.dialect.H2Dialect
-
-    h2:
-        console:
-            enabled: true
-
-app:
-    security:
-        jwt:
-            secret-key: 5368566D5971337436773979244226452948404D635166546A576E5A72347537
-            access-expiration: 86400000   # 24 Hours
-            refresh-expiration: 604800000 # 07 Days
+    profiles:
+        active:  ${APP_PROFILE:prod}

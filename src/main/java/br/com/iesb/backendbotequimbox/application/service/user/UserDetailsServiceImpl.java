@@ -19,7 +19,7 @@ public class UserDetailsServiceImpl implements UserDetailsService {
 
     @Override
     public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
-        UserModel userModel = userDaoPort.findByCnpjOrEmail(username).orElseThrow(AuthBadCredentialsException::new);
-        return USER_JPA_ENTITY_MAPPER.toEntity(userModel);
+        return USER_JPA_ENTITY_MAPPER
+                .toEntity(userDaoPort.findByCnpjOrEmail(username).orElseThrow(AuthBadCredentialsException::new));
     }
 }
