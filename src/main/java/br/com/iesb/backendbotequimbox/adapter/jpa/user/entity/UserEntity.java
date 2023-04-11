@@ -45,13 +45,13 @@ public class UserEntity implements UserDetails {
 
     private String password;
 
-    private Boolean isEnabled;
+    private Boolean isEnabled = false;
 
-    private Boolean isAccountNonExpired;
+    private Boolean isAccountNonExpired = true;
 
-    private Boolean isAccountNonLocked;
+    private Boolean isAccountNonLocked = true;
 
-    private Boolean isCredentialsNonExpired;
+    private Boolean isCredentialsNonExpired = true;
 
     private LocalDateTime createdAt;
 

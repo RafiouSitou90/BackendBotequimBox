@@ -37,10 +37,10 @@ public class UserService implements UserServicePort {
         uModel.setEmail(userModel.getEmail().trim().toLowerCase());
         uModel.setPassword(getPasswordHashed(userModel.getPassword()));
         uModel.setRoles(getUserDefaultRoles(roles));
-        uModel.setIsEnabled(false);
-        uModel.setIsAccountNonExpired(false);
-        uModel.setIsAccountNonLocked(false);
-        uModel.setIsCredentialsNonExpired(false);
+        uModel.setIsEnabled(true);
+        uModel.setIsAccountNonExpired(true);
+        uModel.setIsAccountNonLocked(true);
+        uModel.setIsCredentialsNonExpired(true);
         uModel.setCreatedAt(LocalDateTime.now(clock));
         uModel.setUpdatedAt(null);
 
