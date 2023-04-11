@@ -57,7 +57,7 @@ public class UserEntity implements UserDetails {
 
     private LocalDateTime updatedAt;
 
-    @ManyToMany(targetEntity = UserRoleEntity.class)
+    @ManyToMany(targetEntity = UserRoleEntity.class, fetch = FetchType.EAGER)
     @JoinTable(name = "tab_user_roles",
             joinColumns = @JoinColumn(name = "user_id", referencedColumnName = "id"),
             inverseJoinColumns = @JoinColumn(name = "role_id", referencedColumnName = "id")
